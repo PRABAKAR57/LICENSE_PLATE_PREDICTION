@@ -1,43 +1,10 @@
-# License-plate Detection by YOLO
+Understanding the Automatic License Number Plate Recognition System
+Automatic License Number Plate Recognition Systems are available in all shapes and sizes:
 
-This repository contains a method to detect **Iranian vehicle license plates** as a representation of vehicle presence in an image. We have utilized **You Only Look Once version 3 (YOLO v.3)** to detect the license plates inside an input image. The method has the advantages of high accuracy and real-time performance, according to YOLO v.3 architecture. The presented system receives a series of vehicle images and produces the processed image with added bounding-boxes containing the vehicles' license plates. The flow of how we have trained and tested the application is published in a paper accessible from the citation section.
+ANPR executed in measured lighting situations with predictable number plate types can utilize basic techniques for image processing.
+More advanced ANPR systems use dedicated object detectors, like HOG + Linear SVM, SSDs, YOLO, and Faster R-CNN to localize license number plates in images.
+State-of-the-art ANPR software uses Recurrent Neural Networks (RNNs) and Long Short-Term Memory networks (LSTMs) in order to aid in better OCRing of the text from the number plates themselves.
+Even more advanced ANPR systems utilize specialized neural network architectures in order to preprocess and clean images before they are OCRed, thereby developing the accuracy of ANPR.
+The fact that makes Automatic License Number Plate Recognition more complicated may require operating in real-time.
 
-![Sample output of the system](Ali-Tourani-Sajjad-Soroori-Deep-Learning-LPD.png "Sample Output")
-
-## Environment
-
-- Python v.3
-- You Only Look Once (YOLO) v.3
-- A vehicle image dataset containing 3000+ samples (it will be available for academic usage soon)
-
-## How to employ?
-
-You can download the weight file from [this](https://drive.google.com/file/d/1vXjIoRWY0aIpYfhj3TnPUGdmJoHnWaOc/ "this") link.
-
-Test on a single image:
-
-```
-python object_detection_yolo.py --image=bird.jpg
-```
-
-Test on a single video file:
-
-```
-python object_detection_yolo.py --video=cars.mp4
-```
-
-Test on the webcam:
-
-```
-python object_detection_yolo.py
-```
-
-## Citation
-
-Please cite us as below formation:
-1. S. Khazaee, A. Tourani, S. Soroori, A. Shahbahrami, and C. Y. Suen, “**A Real-time License-Plate Detection Method using a Deep Learning Approach**,” 2nd International Conference on Pattern Recognition and Artificial Intelligence, Zhongshan, 2020. ([link](https://users.encs.concordia.ca/~icprai20/ "link"))
-
-## Collaborators
-
-- [Sajjad Soroori](https://github.com/SajjadSo "Sajjad Soroori")
-- [Ali Tourani](https://github.com/alitourani "Ali Tourani")
+For instance, let us consider an ANPR system that is mounted on a toll road. It has to be able to detect the number plate of each vehicle passing by, OCR the characters on the plate, and then store this data in a database so the vehicle's owner can be billed for the toll.
